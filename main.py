@@ -20,7 +20,7 @@ def g():
 
 if __name__ == "__main__":
     app.run(debug=True)#запуск локального сервера
-
+print('test')
 
 
 
