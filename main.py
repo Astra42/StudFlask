@@ -1,18 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 #перове WSGI приложение
 
 app = Flask(__name__)
 
-
+menu = ['котики большие', 'котики поменбше', 'микрочелс']
 @app.route('/home')
 @app.route('/index')
 @app.route('/')
 def index():
-    return 'index'
+    return render_template('index.html', title='главненькая', menu=menu)
 
 @app.route('/about')
 def about():
-    return '<h1> опс а тут будет о сайте</h1>'
+    return render_template('about.html', title='о котиках')
 
 @app.route('/g')
 def g():
